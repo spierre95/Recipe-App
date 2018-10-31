@@ -2,11 +2,18 @@
     .home {
         height:100vh;    
         background-image: linear-gradient(to right bottom, 
-        rgba(#000, 0.8),
-        rgba(#000, 0.70)),
-        url(../../../public/img/hero.jpg);
+        rgba($color-black, 0.8),
+        rgba($color-black, 0.70)),
+        url(img/hero.jpg);
         background-size: cover;
-        background-position: top;  
+        background-position: top;
+        
+        &__text-box {
+            width: 100vh;
+            position:absolute;
+            top:40%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            text-align: center;
+        }
     }
-    
-    
