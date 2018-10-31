@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './containers/pages/home';
-import Recipe from './containers/pages/search';
-import Search from './containers/pages/recipe';
+import Home from 'containers/pages/Home';
+import Recipe from 'containers/pages/Recipe';
+import Search from 'containers/pages/Search';
+
 class App extends Component {
   render() {
     return (
