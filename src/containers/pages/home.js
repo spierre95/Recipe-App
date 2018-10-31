@@ -3,7 +3,15 @@ import { withRouter } from 'react-router';
 
 class Home extends Component {
   render() {
-    return (<h1> HOME </h1>);
+    return (
+    <div class="home">
+      <h1> 
+        <span>Your Perfect Recipe Awaits</span>
+        <span>Search Millions of Recipes!</span>
+      </h1>
+      {/* <SearchBar/> */}
+    </div>
+    );
   }
 }
 
