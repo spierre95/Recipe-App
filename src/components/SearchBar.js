@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { searchRecipes } from "actions/recipe";
 export class SearchBar extends Component {
-  state = { input: null };
+  state = { input: null, placeholder: "Search Millions of Recipes" };
 
   inputValue = React.createRef();
 
@@ -20,9 +20,17 @@ export class SearchBar extends Component {
     event.preventDefault();
   }
 
+  handleKeyPress = event => {
+    const { searchRecipes } = this.props;
+    if (event.key === "Enter") {
+      searchRecipes(this.state.input);
+      this.resetInput();
+    }
+  };
+
   resetInput() {
     this.inputValue.current.value = "";
-    this.inputValue.current.placeholder = "Search Millions of Recipes";
+    this.inputValue.current.placeholder = this.state.placeholder;
   }
   render() {
     return (
@@ -31,8 +39,9 @@ export class SearchBar extends Component {
           <input
             type="text"
             onChange={this.handleChange.bind(this)}
+            onKeyPress={this.handleKeyPress.bind(this)}
             className="search__input"
-            placeholder="Search Millions of Recipes"
+            placeholder={this.state.placeholder}
             ref={this.inputValue}
             name="input"
           />
