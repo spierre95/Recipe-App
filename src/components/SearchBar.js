@@ -27,7 +27,6 @@ export class SearchBar extends Component {
     }
 }
 
-export default connect
-(null,
+export default connect(null,
  { searchRecipes }    
 )(SearchBar);
