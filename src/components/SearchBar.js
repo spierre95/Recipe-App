@@ -4,6 +4,8 @@ import { searchRecipes } from "actions/recipe";
 export class SearchBar extends Component {
   state = { input: null };
 
+  inputValue = React.createRef();
+
   handleChange(event) {
     this.setState({ input: event.target.value });
   }
@@ -13,9 +15,15 @@ export class SearchBar extends Component {
 
     searchRecipes(this.state.input);
 
-    event.preventDefault()
+    this.resetInput();
+
+    event.preventDefault();
   }
 
+  resetInput() {
+    this.inputValue.current.value = "";
+    this.inputValue.current.placeholder = "Search Millions of Recipes";
+  }
   render() {
     return (
       <div class="search__container--main">
@@ -25,6 +33,7 @@ export class SearchBar extends Component {
             onChange={this.handleChange.bind(this)}
             className="search__input"
             placeholder="Search Millions of Recipes"
+            ref={this.inputValue}
             name="input"
           />
           <button
