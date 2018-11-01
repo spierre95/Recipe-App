@@ -1,32 +1,46 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { searchRecipes } from 'actions/recipe'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { searchRecipes } from "actions/recipe";
 export class SearchBar extends Component {
+  state = { input: null };
 
-    state = { input: null, }
+  handleChange(event) {
+    this.setState({ input: event.target.value });
+  }
 
-    handleChange (event){
-        this.setState({ input: event.target.value })
-    }
+  handleClick(event) {
+    const { searchRecipes } = this.props;
 
-    handleClick (){
-       
-        const  { searchRecipes } = this.props
-        
-        searchRecipes(this.state.input)
-    
-    }
+    searchRecipes(this.state.input);
 
-    render(){
-        return (
-            <div>
-                <input onChange={this.handleChange.bind(this)} type="text" name='input'/>
-                <button onClick={this.handleClick.bind(this)}>Search</button>
-            </div>  
-        )
-    }
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <div class="search__container--main">
+        <div class="search">
+          <input
+            type="text"
+            onChange={this.handleChange.bind(this)}
+            className="search__input"
+            placeholder="Search Millions of Recipes"
+            name="input"
+          />
+          <button
+            type="submit"
+            class="search__button"
+            onClick={this.handleClick.bind(this)}
+          >
+            <i class="fa fa-search" />
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default connect(null,
- { searchRecipes }    
+export default connect(
+  null,
+  { searchRecipes }
 )(SearchBar);

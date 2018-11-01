@@ -1,0 +1,42 @@
+.search {
+  width: 100%;
+  position: relative;
+
+  &__container--main {
+    width: 75%;
+    margin-top: 2rem;
+    animation-name: moveInTopBounce;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+
+  &__input {
+    float: left;
+    width: 100%;
+    border: 3px solid #00b4cc;
+    padding: 0.5rem;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    outline: none;
+    color: #9dbfaf;
+    font-size: 1.6rem;
+
+    &:focus {
+      color: #00b4cc;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: -3rem;
+    width: 5rem;
+    height: 4.5rem;
+    border: 1px solid #00b4cc;
+    background: #00b4cc;
+    text-align: center;
+    color: $color-white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+}

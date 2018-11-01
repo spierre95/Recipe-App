@@ -9,10 +9,9 @@ class Home extends Component {
       <div className="home__text-box">
         <h1 className="heading-primary">
           <span className="heading-primary--main">Your Perfect Recipe Awaits</span>
-          <span className="heading-primary--sub">Search Millions of Recipes</span>
         </h1>
+        <SearchBar/>
       </div>
-      <SearchBar/>
     </div>
     );
   }

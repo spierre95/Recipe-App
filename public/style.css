@@ -22,38 +22,30 @@ body {
   backface-visibility: hidden; }
   .heading-primary--main {
     display: block;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 300;
     letter-spacing: .8rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.7rem;
-    margin: 2.5rem 0 5rem 0;
-    animation-name: moveInRight;
+    animation-name: moveInTop;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
 
-@keyframes moveInLeft {
+@keyframes moveInTop {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateY(-10rem); }
   80% {
-    transform: translateX(1rem); }
+    transform: translateY(1rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
 
-@keyframes moveInRight {
+@keyframes moveInTopBounce {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateY(-10rem); }
   80% {
-    transform: translateX(-1rem); }
+    transform: translateY(2rem);
+    opacity: 50%; }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -69,4 +61,40 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+.search {
+  width: 100%;
+  position: relative; }
+  .search__container--main {
+    width: 75%;
+    margin-top: 2rem;
+    animation-name: moveInTopBounce;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .search__input {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: .5rem;
+    height: 4.5rem;
+    border-radius: .5rem;
+    outline: none;
+    color: #9DBFAF;
+    font-size: 1.6rem; }
+    .search__input:focus {
+      color: #00B4CC; }
+  .search__button {
+    position: absolute;
+    right: -3rem;
+    width: 5rem;
+    height: 4.5rem;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 2rem; }
