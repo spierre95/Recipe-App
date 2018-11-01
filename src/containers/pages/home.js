@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import SearchBar from 'components/SearchBar'
 
 class Home extends Component {
   render() {
@@ -11,7 +12,7 @@ class Home extends Component {
           <span class="heading-primary--sub">Search Millions of Recipes</span>
         </h1>
       </div>
-      {/* <SearchBar/> */}
+      <SearchBar/>
     </div>
     );
   }
