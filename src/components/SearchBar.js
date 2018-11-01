@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { searchRecipes } from 'actions/recipe';
 export class SearchBar extends Component {
 
     state = { input: null, }
@@ -9,9 +10,11 @@ export class SearchBar extends Component {
     }
 
     handleClick (){
-
-        console.log(this.state.input)
+       
+        const  { searchRecipes } = this.props;
         
+        searchRecipes(this.state.input)
+    
     }
 
     render(){
@@ -24,4 +27,7 @@ export class SearchBar extends Component {
     }
 }
 
-export default SearchBar;
+export default connect
+(null,
+ { searchRecipes }    
+)(SearchBar);
