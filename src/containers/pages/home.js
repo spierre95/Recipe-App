@@ -10,7 +10,7 @@ class Home extends Component {
         <h1 className="heading-primary">
           <span className="heading-primary--main">Your Perfect Recipe Awaits</span>
         </h1>
-        <SearchBar/>
+        <SearchBar redirect={true} />
       </div>
     </div>
     );

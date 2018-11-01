@@ -14,7 +14,7 @@ class App extends Component {
           <Fragment>
             <Route title="Home" exact path="/" component={Home} />
             <Route title="Search" exact path="/search" component={Search} />
-            <Route title="Recipe" path="/:recipe" component={Recipe} />
+            <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
           </Fragment>
         </Router>
       </Provider>

@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import { searchRecipes } from "actions/recipe";
 export class SearchBar extends Component {
-  state = { input: null, placeholder: "Search Millions of Recipes" };
+
+  static propTypes = {
+    redirect: PropTypes.bool,
+  };
+
+  static contextTypes = {
+    router: PropTypes.object
+  }
 
   inputValue = React.createRef();
+  
+  state = { input: null, placeholder: "Search Millions of Recipes" };
 
   handleChange(event) {
     this.setState({ input: event.target.value });
@@ -16,6 +26,7 @@ export class SearchBar extends Component {
     searchRecipes(this.state.input);
 
     this.resetInput();
+    this.handleRedirect()
 
     event.preventDefault();
   }
@@ -25,6 +36,7 @@ export class SearchBar extends Component {
     if (event.key === "Enter") {
       searchRecipes(this.state.input);
       this.resetInput();
+      this.handleRedirect()
     }
   };
 
@@ -32,6 +44,13 @@ export class SearchBar extends Component {
     this.inputValue.current.value = "";
     this.inputValue.current.placeholder = this.state.placeholder;
   }
+
+  handleRedirect(){
+    if (this.props.redirect){
+       this.context.router.history.push('/search') 
+    }
+  }
+
   render() {
     return (
       <div class="search__container--main">
