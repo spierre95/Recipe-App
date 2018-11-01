@@ -2,6 +2,7 @@ import { search } from "constants/apiRequests";
 
 export function searchRecipes(input) {
   return dispatch => {
+    requestRecipes()
     return search(input)
       .then(res => {
         const recipes = res.data;
@@ -12,7 +13,13 @@ export function searchRecipes(input) {
         });
       })
       .catch(error => {
-        throw error;
+        throw error
       });
+  };
+}
+
+function requestRecipes() {
+  return {
+    type: 'REQUEST_RECIPES',
   };
 }

@@ -1,9 +1,23 @@
-export default function recipes(state = {}, action) {
-  switch (action.type) {
-    case "RECEIVE_RECIPES":
-      console.log(action.payload);
 
-      return state;
+const initialState = {
+  fetching:false
+}
+
+
+export default function recipes(state = initialState, action) {
+  switch (action.type) {
+
+    case "REQUEST_RECIPES":
+    return{
+      fetching: true
+    }
+
+    case "RECEIVE_RECIPES":
+      
+
+      return {
+        fetching: false
+      };
 
     default:
       return state;

@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { searchRecipes } from "actions/recipe";
 export class SearchBar extends Component {
-
   static propTypes = {
     redirect: PropTypes.bool,
+    className: PropTypes.string
   };
 
   static contextTypes = {
     router: PropTypes.object
-  }
+  };
 
   inputValue = React.createRef();
-  
+
   state = { input: null, placeholder: "Search Millions of Recipes" };
 
   handleChange(event) {
@@ -26,7 +26,7 @@ export class SearchBar extends Component {
     searchRecipes(this.state.input);
 
     this.resetInput();
-    this.handleRedirect()
+    this.handleRedirect();
 
     event.preventDefault();
   }
@@ -36,7 +36,7 @@ export class SearchBar extends Component {
     if (event.key === "Enter") {
       searchRecipes(this.state.input);
       this.resetInput();
-      this.handleRedirect()
+      this.handleRedirect();
     }
   };
 
@@ -45,16 +45,18 @@ export class SearchBar extends Component {
     this.inputValue.current.placeholder = this.state.placeholder;
   }
 
-  handleRedirect(){
-    if (this.props.redirect){
-       this.context.router.history.push('/search') 
+  handleRedirect() {
+    const { redirect, fetching } = this.props;
+
+    if (redirect && !fetching) {
+      this.context.router.history.push("/search");
     }
   }
 
   render() {
     return (
-      <div class="search__container--main">
-        <div class="search">
+      <div className={`${this.props.className}`}>
+        <div className="search">
           <input
             type="text"
             onChange={this.handleChange.bind(this)}
@@ -66,10 +68,10 @@ export class SearchBar extends Component {
           />
           <button
             type="submit"
-            class="search__button"
+            className="search__button"
             onClick={this.handleClick.bind(this)}
           >
-            <i class="fa fa-search" />
+            <i className="fa fa-search" />
           </button>
         </div>
       </div>
@@ -77,7 +79,11 @@ export class SearchBar extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  fetching: state.recipes.fetching
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { searchRecipes }
 )(SearchBar);
