@@ -5,7 +5,7 @@ export function searchRecipes(input) {
 
     return search(input)
         .then(res => {
-
+          
           const recipes = res.data  
 
           dispatch({

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchRecipes } from 'actions/recipe';
+import { searchRecipes } from 'actions/recipe'
 export class SearchBar extends Component {
 
     state = { input: null, }
 
     handleChange (event){
-        this.setState({ input: event.target.value });
+        this.setState({ input: event.target.value })
     }
 
     handleClick (){
        
-        const  { searchRecipes } = this.props;
+        const  { searchRecipes } = this.props
         
         searchRecipes(this.state.input)
     
@@ -20,7 +20,7 @@ export class SearchBar extends Component {
     render(){
         return (
             <div>
-                <input onChange={this.handleChange.bind(this)} type="text" name="input"/>
+                <input onChange={this.handleChange.bind(this)} type="text" name='input'/>
                 <button onClick={this.handleClick.bind(this)}>Search</button>
             </div>  
         )
