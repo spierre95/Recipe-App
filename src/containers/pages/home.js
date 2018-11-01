@@ -7,9 +7,9 @@ class Home extends Component {
     return (
     <div className="home">
       <div className="home__text-box">
-        <h1 class="heading-primary">
-          <span class="heading-primary--main">Your Perfect Recipe Awaits</span>
-          <span class="heading-primary--sub">Search Millions of Recipes</span>
+        <h1 className="heading-primary">
+          <span className="heading-primary--main">Your Perfect Recipe Awaits</span>
+          <span className="heading-primary--sub">Search Millions of Recipes</span>
         </h1>
       </div>
       <SearchBar/>
