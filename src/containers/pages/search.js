@@ -3,7 +3,9 @@ import { withRouter } from 'react-router';
 
 class Search extends Component {
   render() {
-    return (<h1> Search </h1>);
+    return (
+      <h1> Search</h1>
+    );
   }
 }
 

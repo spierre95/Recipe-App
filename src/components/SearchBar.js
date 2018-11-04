@@ -54,21 +54,22 @@ export class SearchBar extends Component {
   }
 
   render() {
+    const { classModifier } = this.props
     return (
-      <div className={`${this.props.className}`}>
+      <div className={`search__container search__container--${classModifier}`}>
         <div className="search">
           <input
             type="text"
             onChange={this.handleChange.bind(this)}
             onKeyPress={this.handleKeyPress.bind(this)}
-            className="search__input"
+            className={`search__input search__input--${classModifier}`}
             placeholder={this.state.placeholder}
             ref={this.inputValue}
             name="input"
           />
           <button
             type="submit"
-            className="search__button"
+            className={`search__button search__button--${classModifier}`}
             onClick={this.handleClick.bind(this)}
           >
             <i className="fa fa-search" />

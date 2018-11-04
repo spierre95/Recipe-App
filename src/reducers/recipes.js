@@ -14,9 +14,9 @@ export default function recipes(state = initialState, action) {
 
     case "RECEIVE_RECIPES":
       
-
       return {
-        fetching: false
+        fetching: false,
+        recipes: action.payload,
       };
 
     default:
