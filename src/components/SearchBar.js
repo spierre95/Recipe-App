@@ -54,7 +54,8 @@ export class SearchBar extends Component {
   }
 
   render() {
-    const { classModifier } = this.props
+    const { classModifier, recipes} = this.props
+    console.log(recipes)
     return (
       <div className={`search__container search__container--${classModifier}`}>
         <div className="search">
@@ -81,7 +82,7 @@ export class SearchBar extends Component {
 }
 
 const mapStateToProps = state => ({
-  fetching: state.recipes.fetching
+  recipes: state.search.recipes
 });
 
 export default connect(

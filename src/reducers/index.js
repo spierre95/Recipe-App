@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import recipes from 'reducers/recipes';
+import search from 'reducers/search';
 
 const rootRuducer = combineReducers({
-    recipes,
+    search
 })
 
 export default rootRuducer

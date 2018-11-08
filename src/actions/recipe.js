@@ -2,7 +2,7 @@ import { search } from "constants/apiRequests";
 
 export function searchRecipes(input) {
   return dispatch => {
-    requestRecipes()
+    dispatch(requestRecipes())
     return search(input)
       .then(res => {
         const recipes = res.data;

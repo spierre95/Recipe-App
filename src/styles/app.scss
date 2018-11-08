@@ -8,9 +8,11 @@
 
 //PAGES
 @import "pages/home";
+@import "pages/search";
 
 //LAYOUT
 @import "layout/header";
 
 //COMPONENTS
 @import "components/searchbar";
+@import "components/recipe-card";
