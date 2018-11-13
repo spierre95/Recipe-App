@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { updateFavourites } from "actions/favourites";
 
 export class FavouriteButton extends Component {
-
-handleClick = () => {
-    
-}
+  handleClick = () => {
+    const { updateFavourites, recipe } = this.props;
+    updateFavourites(recipe)
+  };
 
   render() {
     return (
@@ -15,4 +17,11 @@ handleClick = () => {
   }
 }
 
-export default FavouriteButton;
+const mapStateToProps = state => ({
+  favourites: state.favourites
+});
+
+export default connect(
+  mapStateToProps,
+  { updateFavourites }
+)(FavouriteButton);

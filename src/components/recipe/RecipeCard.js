@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FavouriteButton from "components/favourites/FavouriteButton"
 
-export const RecipeCard = props => {
+export const RecipeCard = ({ recipe }) => {
   return (
     <div className="recipe-card">
-     <Link to={`/recipe/${props.id}`}>
+    <FavouriteButton recipe={recipe} />
+     <Link to={`/recipe/${recipe.recipe_id}`}>
       <div
         class="recipe-card__img"
-        style={{ backgroundImage: `url(${props.img})` }}
-        alt={props.title}
+        style={{ backgroundImage: `url(${recipe.imgage_url})` }}
+        alt={recipe.title}
       />
-        <h3 className="heading-tertiary">{props.title}</h3>
+        <h3 className="heading-tertiary">{recipe.title}</h3>
       </Link>
     </div>
   );
