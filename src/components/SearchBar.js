@@ -16,11 +16,11 @@ export class SearchBar extends Component {
 
   state = { input: null, placeholder: "Search Millions of Recipes" };
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ input: event.target.value });
   }
 
-  handleClick(event) {
+  handleClick = (event) => {
     const { searchRecipes } = this.props;
 
     searchRecipes(this.state.input);
@@ -54,15 +54,14 @@ export class SearchBar extends Component {
   }
 
   render() {
-    const { classModifier, recipes} = this.props
-    console.log(recipes)
+    const { classModifier } = this.props
     return (
       <div className={`search__container search__container--${classModifier}`}>
         <div className="search">
           <input
             type="text"
-            onChange={this.handleChange.bind(this)}
-            onKeyPress={this.handleKeyPress.bind(this)}
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
             className={`search__input search__input--${classModifier}`}
             placeholder={this.state.placeholder}
             ref={this.inputValue}
@@ -71,7 +70,7 @@ export class SearchBar extends Component {
           <button
             type="submit"
             className={`search__button search__button--${classModifier}`}
-            onClick={this.handleClick.bind(this)}
+            onClick={this.handleClick}
           >
             <i className="fa fa-search" />
           </button>
@@ -81,11 +80,7 @@ export class SearchBar extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  recipes: state.search.recipes
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   { searchRecipes }
 )(SearchBar);
