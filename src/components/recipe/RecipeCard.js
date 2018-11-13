@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const RecipeCard = props => {
   return (
     <div className="recipe-card">
-     <Link to="/recipe/1">
+     <Link to={`/recipe/${props.id}`}>
       <div
         class="recipe-card__img"
         style={{ backgroundImage: `url(${props.img})` }}
