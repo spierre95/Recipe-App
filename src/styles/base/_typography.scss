@@ -4,6 +4,10 @@ body {
   line-height: 1.7;
 }
 
+a {
+  text-decoration: none;
+}
+
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;
@@ -17,5 +21,19 @@ body {
     animation-name: moveInTop;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  color: #187d9b;
+  letter-spacing: 2px;
+  padding: 1rem 0.5rem;
+
+  &:hover {
+    color: #1eadd8;
   }
 }
