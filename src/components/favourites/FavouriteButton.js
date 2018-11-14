@@ -1,27 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateFavourites } from "actions/favourites";
+import { addToFavourites, removeFromFavourites } from "actions/favourites";
 
 export class FavouriteButton extends Component {
+
+  state = {
+      isFavourite: this.props.recipe.isFavourite
+  }
+
   handleClick = () => {
-    const { updateFavourites, recipe } = this.props;
-    updateFavourites(recipe)
+    const { removeFromFavourites, addToFavourites, recipe } = this.props;
+
+    recipe.isFavourite ? removeFromFavourites(recipe.recipe_id) : addToFavourites(recipe.recipe_id);
   };
 
+handleHover = () => {
+    this.setState({ isFavourite: !this.state.isFavourite})
+}
+
   render() {
-    return (
-      <div onClick={this.handleClick}>
-        <i class="fas fa-heart" />
-      </div>
-    );
+
+    const isFavourite = this.state.isFavourite ? "fas" : "far"
+
+    return <i className={`${isFavourite} fa-heart favourite`} onClick={this.handleClick} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}/>;
   }
 }
 
-const mapStateToProps = state => ({
-  favourites: state.favourites
-});
-
 export default connect(
-  mapStateToProps,
-  { updateFavourites }
+  null,
+  { addToFavourites, removeFromFavourites }
 )(FavouriteButton);

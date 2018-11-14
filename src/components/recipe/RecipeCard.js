@@ -5,13 +5,15 @@ import FavouriteButton from "components/favourites/FavouriteButton"
 export const RecipeCard = ({ recipe }) => {
   return (
     <div className="recipe-card">
-    <FavouriteButton recipe={recipe} />
+
      <Link to={`/recipe/${recipe.recipe_id}`}>
       <div
         class="recipe-card__img"
-        style={{ backgroundImage: `url(${recipe.imgage_url})` }}
+        style={{ backgroundImage: `url(${recipe.image_url})` }}
         alt={recipe.title}
-      />
+      >
+        <FavouriteButton recipe={recipe} />
+      </div>
         <h3 className="heading-tertiary">{recipe.title}</h3>
       </Link>
     </div>
