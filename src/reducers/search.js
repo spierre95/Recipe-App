@@ -14,11 +14,7 @@ export default function recipes(state = initialState, action) {
 
     case "RECEIVE_RECIPES":
 
-    console.log(action.payload.recipes)
-
     const normalizedData = normalize(action.payload.recipes, [recipesSchema])
-
-    console.log(normalizedData)
 
       return {
         fetching: false,
@@ -28,19 +24,27 @@ export default function recipes(state = initialState, action) {
       };
 
     case "ADD_TO_FAVOURITES":
-
     return {
       ...state,
-      ...state.recipes[action.payload.id],
-      isFavourite: true
-    }
+      recipes : {
+        ...state.recipes,
+        [action.payload.recipe.recipe_id]:{
+          ...state.recipes[action.payload.recipe.recipe_id],
+          isFavourite: true
+        } 
+      }
+    }  
     case "REMOVE_FROM_FAVOURITES":
     return {
       ...state,
-      ...state.recipes[action.payload.id],
-      isFavourite: false
-    }
-
+      recipes : {
+        ...state.recipes,
+        [action.payload.recipe.recipe_id]:{
+          ...state.recipes[action.payload.recipe.recipe_id],
+          isFavourite: false
+        } 
+      }
+    } 
     default:
       return state;
   }

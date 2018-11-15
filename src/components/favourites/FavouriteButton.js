@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import { addToFavourites, removeFromFavourites } from "actions/favourites";
 
 export class FavouriteButton extends Component {
-  state = {
-    isFavourite: this.props.recipe.isFavourite
-  };
 
   handleClick = e => {
     e.stopPropagation();
@@ -13,23 +10,17 @@ export class FavouriteButton extends Component {
     const { removeFromFavourites, addToFavourites, recipe } = this.props;
 
     recipe.isFavourite
-      ? removeFromFavourites(recipe.recipe_id)
-      : addToFavourites(recipe.recipe_id);
-  };
-
-  handleHover = () => {
-    this.setState({ isFavourite: !this.state.isFavourite });
+      ? removeFromFavourites(recipe)
+      : addToFavourites(recipe);
   };
 
   render() {
-    const isFavourite = this.state.isFavourite ? "fas" : "far";
+    const isFavourite = this.props.recipe.isFavourite ? "fas" : "far";
 
     return (
       <i
         className={`${isFavourite} fa-heart favourite`}
         onClick={this.handleClick}
-        onMouseEnter={this.handleHover}
-        onMouseLeave={this.handleHover}
       />
     );
   }

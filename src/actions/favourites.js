@@ -1,13 +1,13 @@
-export const addToFavourites = (id) => {
+export const addToFavourites = (recipe) => {
     return {
         type: "ADD_TO_FAVOURITES",
-        payload: id
+        payload: {recipe}
     }
 }
 
-export const removeFromFavourites = (id) => {
+export const removeFromFavourites = (recipe) => {
     return {
         type: "REMOVE_FROM_FAVOURITES",
-        payload: id
+        payload: {recipe}
     }
 }
