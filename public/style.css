@@ -159,7 +159,8 @@ a {
   flex: 0 0 calc(25% + 20px);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   margin: 2rem;
-  animation: 0.3s ease-in; }
+  animation: 0.3s ease-in;
+  background-color: #fff; }
   .recipe-card .heading-tertiary {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -196,12 +197,13 @@ a {
     right: 15rem; }
     .favourite-dropdown-button__container:not(.hidden)::after {
       content: "";
-      border-top: 15px solid #000;
+      border-top: 15px solid #fff;
       border-left: 15px solid transparent;
       border-right: 15px solid transparent;
       border-radius: 2px;
       position: absolute;
-      top: -15px;
+      top: 50px;
+      right: 3px;
       transform: rotate(180deg); }
   .favourite-dropdown-button--active {
     display: block;
@@ -210,10 +212,13 @@ a {
     z-index: 1; }
 
 .favourite-dropdown__container {
-  width: 20rem;
+  width: 30rem;
   position: absolute;
-  right: 0rem;
-  top: 9rem;
+  right: 13rem;
+  top: 100%;
   overflow: scroll;
-  background-color: aliceblue;
-  height: 75rem; }
+  height: 28rem;
+  border: 1px solid #f8f8f8;
+  z-index: 10;
+  background-color: rgba(248, 248, 248, 0.86);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35); }

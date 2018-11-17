@@ -4,6 +4,7 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
   margin: 2rem;
   animation: 0.3s ease-in;
+  background-color: $color-white;
 
   .heading-tertiary {
     @include truncate(2);

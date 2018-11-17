@@ -20,7 +20,6 @@ export class DropDownButton extends Component {
           <i
             className={`far fa-heart favourite-dropdown-button `}
             onMouseEnter={this.handleHover}
-            onMouseLeave={this.handleHover}
           />
         </div>
         <DropDown
