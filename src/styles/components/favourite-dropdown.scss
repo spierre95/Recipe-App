@@ -1,0 +1,11 @@
+.favourite-dropdown {
+  &__container {
+    width: 20rem;
+    position: absolute;
+    right: 0rem;
+    top: 9rem;
+    overflow: scroll;
+    background-color: aliceblue;
+    height: 75rem;
+  }
+}

@@ -12,9 +12,4 @@ export class RecipeList extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  recipes: state.search.recipes
-});
-
-export default connect(mapStateToProps)(RecipeList);
+export default connect(RecipeList);
