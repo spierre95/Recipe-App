@@ -6,7 +6,7 @@ import { RecipeList } from 'components/recipe/RecipeList'
 class Search extends Component {
   render() {
     const { search } = this.props;
-    console.log( search, "SEARCH_PROPS")
+    
     return (
       <div className="search-results">
          <RecipeList recipes={search.recipes} results={search.results}/>
@@ -15,10 +15,9 @@ class Search extends Component {
   }
 }
 
-//FIXME: not sure why it wouldn't connect to the redux store in the child component this will do for now to display the data, but should refactor later
-
 const mapStateToProps = state => ({
-  search: state.search
+  search: state.search,
+  favourite: state.favourite
 });
 
 export default connect(

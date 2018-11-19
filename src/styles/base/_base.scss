@@ -1,16 +1,18 @@
 *,
 *::after,
 *::before {
-    margin:0;
-    padding:0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    //defines what 1 rem is (root font-size 10px)
-    font-size: 62.5%;
+  //defines what 1 rem is (root font-size 10px)
+  font-size: 62.5%;
+  height: 100%;
 }
 
 body {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 100%;
 }

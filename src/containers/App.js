@@ -19,6 +19,7 @@ class App extends Component {
             </Switch>
             <Route title="Search" exact path="/search" component={Search} />
             <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
+            <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
           </Fragment>
         </Router>
       </Provider>

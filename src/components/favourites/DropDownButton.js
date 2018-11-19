@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import DropDown from "components/favourites/DropDown";
+import Counter from "components/Counter";
 
 export class DropDownButton extends Component {
   state = {
@@ -12,11 +13,15 @@ export class DropDownButton extends Component {
   };
 
   render() {
-    const btnClass = !this.state.showDropDown && 'hidden'
-    
+    const btnClass = !this.state.showDropDown && "hidden";
+
+    const { favourites } = this.props;
+    const amount = favourites.results.length
+
     return (
       <Fragment>
         <div className={`favourite-dropdown-button__container ${btnClass}`}>
+          {amount > 0 && <Counter amount={amount} />}
           <i
             className={`far fa-heart favourite-dropdown-button `}
             onMouseEnter={this.handleHover}
@@ -24,7 +29,7 @@ export class DropDownButton extends Component {
         </div>
         <DropDown
           showDropDown={this.state.showDropDown}
-          favourites={this.props.favourites}
+          favourites={favourites}
           handleHover={this.handleHover}
         />
       </Fragment>

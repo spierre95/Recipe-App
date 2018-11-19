@@ -1,0 +1,16 @@
+.counter {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10%;
+  right: 0%;
+  border-radius: 50%;
+  background-color: #e80606;
+  width: 1.5rem;
+  height: 1.5rem;
+  &-amount {
+    color: $color-white;
+  }
+}

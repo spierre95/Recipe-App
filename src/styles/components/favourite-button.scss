@@ -11,17 +11,27 @@
   &__container {
     position: absolute;
     right: 15rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &:not(.hidden)::after {
-      content: "";
-      border-top: 15px solid #fff;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-radius: 2px;
-      position: absolute;
-      top: 50px;
-      right: 3px;
-      transform: rotate(180deg);
+    &:not(.hidden) {
+      background-color: #0a1a21;
+      &::after {
+        content: "";
+        border-top: 15px solid #fff;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-radius: 2px;
+        position: absolute;
+        top: 50px;
+        right: 9px;
+        transform: rotate(180deg);
+      }
     }
   }
   display: block;
@@ -29,10 +39,7 @@
   color: #539fbf;
   z-index: 1;
 
-  &--active {
-    display: block;
-    font-size: 3.5rem;
+  &:hover {
     color: #65c1e9;
-    z-index: 1;
   }
 }
