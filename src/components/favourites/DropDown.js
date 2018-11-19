@@ -13,14 +13,10 @@ export default class RecipeList extends Component {
     return (
       <Fragment>
         {showDropDown && (
-          <div className="favourite-dropdown">
+          <div className="favourite-dropdown" onMouseLeave={handleHover}>
             <h3 className="favourite-dropdown__title">Favourites</h3>
-            <div
-              className="favourite-dropdown__container"
-              onMouseLeave={handleHover}
-            >
-              {showDropDown &&
-                favourites.results &&
+            <div className="favourite-dropdown__container">
+              {favourites.results &&
                 favourites.results.map(id => (
                   <RecipeCardFavourite recipe={favourites.recipes[id]} />
                 ))}

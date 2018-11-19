@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux'
-import store from 'store'
-import Home from 'containers/pages/Home';
-import Recipe from 'containers/pages/Recipe';
-import Search from 'containers/pages/Search';
-import Header from 'containers/layout/Header';
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "store";
+import Home from "containers/pages/Home";
+import Recipe from "containers/pages/Recipe";
+import Header from "containers/layout/Header";
+import DisplayRecipes from "containers/DisplayRecipes";
 
 class App extends Component {
   render() {
@@ -15,10 +15,20 @@ class App extends Component {
           <Fragment>
             <Switch>
               <Route title="Landing" exact path="/" component={Home} />
-              <Route title="Header" component={Header}/>
+              <Route title="Header" component={Header} />
             </Switch>
-            <Route title="Search" exact path="/search" component={Search} />
-            <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
+            <Route
+              title="Search"
+              exact
+              path="/search"
+              component={DisplayRecipes}
+            />
+            <Route
+              title="Favourites"
+              exact
+              path="/favourites"
+              component={DisplayRecipes}
+            />
             <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
           </Fragment>
         </Router>
