@@ -16,7 +16,10 @@ export default function favourites(state = initialState, action) {
         ...state,
         recipes: {
           ...state.recipes,
-          ...normalizedData.entities.recipes
+          [action.payload.recipe.recipe_id]:{
+            ...normalizedData.entities.recipes[action.payload.recipe.recipe_id],
+            isFavourite: true
+          } 
         },
         results: [...state.results, ...normalizedData.result]
       };
