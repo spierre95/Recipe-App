@@ -1,15 +1,14 @@
 import { search, get } from "constants/apiRequests";
-import { testData } from 'constants/testData';
-import parseIngredients from 'utils/parseIngredients'
+import { searchData, recipeData } from "constants/testData";
+import parseIngredients from "utils/parseIngredients";
 
 export function searchRecipes(input) {
   return dispatch => {
+    const recipes = searchData;
 
-    const recipes = testData
-    
     dispatch({
-        type: "RECEIVE_RECIPES",
-        payload: recipes
+      type: "RECEIVE_RECIPES",
+      payload: recipes
     });
     // dispatch(requestRecipes());
     // return search(input)
@@ -35,37 +34,40 @@ export function searchRecipes(input) {
 
 export function getRecipe(id) {
   return dispatch => {
+    const recipe = recipeData;
 
-    return get(id)
-    .then((res)=>{
-        const { recipe } = res.data
-        
-        const { ingredients } = recipe
-        
-        recipe['ingredients'] = parseIngredients(ingredients)
+    console.log(recipe)
 
-        console.log(recipe)
+    const { ingredients } = recipe.recipe;
 
-        dispatch({
-          type: "RECEIVE_RECIPE",
-          payload: recipe
-        });
-    })
-    .catch(err =>{
-      throw err;
-    })
-    // dispatch(requestRecipes());
-    // return search(input)
-    //   .then(res => {
-    //     const recipes = res.data;
+    console.log(ingredients)
+
+    recipe.recipe.ingredients = parseIngredients(ingredients);
+
+    console.log(recipe);
+
+    dispatch({
+      type: "RECEIVE_RECIPE",
+      payload: recipe
+    });
+
+    // return get(id)
+    // .then((res)=>{
+    //     const { recipe } = res.data
+
+    //     const { ingredients } = recipe
+
+    //     recipe['ingredients'] = parseIngredients(ingredients)
+
+    //     console.log(recipe)
 
     //     dispatch({
-    //       type: "RECEIVE_RECIPES",
-    //       payload: recipes
+    //       type: "RECEIVE_RECIPE",
+    //       payload: recipe
     //     });
-    //   })
-    //   .catch(error => {
-    //     throw error;
-    //   });
+    // })
+    // .catch(err =>{
+    //   throw err;
+    // })
   };
 }

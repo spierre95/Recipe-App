@@ -16,18 +16,18 @@ export default function recipes(state = initialState, action) {
 
     case "RECEIVE_RECIPE":
 
-    console.log(action.payload)
+    console.log(action.payload,'payload')
     const normalizedData = normalize(action.payload, [recipeSchema])
-    console.log(normalizedData.entities.recipe)
+    console.log(normalizedData.entities)
 
       return {
         fetching: false,
         ...state,
         recipes:{
             ...state.recipes,
-            ...normalizedData.entities.recipes
+            ...normalizedData.entities.recipe
         },
-        results: [...state.results, normalizedData.entities.recipes.recipe_id]
+        results: [...state.results, normalizedData.entities.recipe.recipe_id]
       };
 
     case "ADD_TO_FAVOURITES":
