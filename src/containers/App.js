@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "store";
 import Home from "containers/pages/Home";
 import Recipe from "containers/pages/Recipe";
-import Header from "containers/layout/Header";
+import Header from "containers/layout/header";
 import DisplayRecipes from "containers/DisplayRecipes";
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
               path="/favourites"
               component={DisplayRecipes}
             />
-            <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
+            <Route title="Recipe" path="/recipe/:recipe_id" component={Recipe} />
           </Fragment>
         </Router>
       </Provider>
