@@ -1,11 +1,21 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "store";
 import Home from "containers/pages/Home";
 import Recipe from "containers/pages/Recipe";
 import Header from "containers/layout/Header";
 import DisplayRecipes from "containers/DisplayRecipes";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from "reducers";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
+
 class App extends Component {
   render() {
     return (
