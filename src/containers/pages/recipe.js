@@ -11,13 +11,20 @@ class Recipe extends Component {
   }
 
   render() {
-    return <h1> Recipe </h1>;
+    const { recipes, match } = this.props;
+    const recipe = recipes && recipes[match.params.recipe_id] 
+    const title = recipe && recipe.title 
+    return <h1> {title} </h1>;
   }
 }
 
+const mapStateToProps = state => ({
+  recipes: state.recipes.recipes
+})
+
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     { getRecipe }
   )(Recipe)
 );
