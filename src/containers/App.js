@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "store";
+import store from "store/reduxStore";
 import Home from "containers/pages/Home";
 import Recipe from "containers/pages/Recipe";
 import Header from "containers/layout/Header";
