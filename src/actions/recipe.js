@@ -1,5 +1,5 @@
-import { search } from "constants/apiRequests";
-import { testData } from 'constants/testData';
+import { search } from ".././constants/apiRequests";
+import { testData } from '.././constants/testData';
 
 export function searchRecipes(input) {
   return dispatch => {

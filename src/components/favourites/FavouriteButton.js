@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToFavourites, removeFromFavourites } from "actions/favourites";
+import { addToFavourites, removeFromFavourites } from "../../actions/favourites";
 
 export class FavouriteButton extends Component {
 

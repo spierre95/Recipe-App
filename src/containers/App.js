@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "store";
-import Home from "containers/pages/Home";
-import Recipe from "containers/pages/Recipe";
-import Header from "containers/layout/Header";
-import DisplayRecipes from "containers/DisplayRecipes";
+import { store } from "../store";
+import Home from "./pages/Home";
+import Recipe from "./pages/Recipe";
+import Header from "./layout/Header";
+import DisplayRecipes from "./DisplayRecipes";
 class App extends Component {
   render() {
     return (

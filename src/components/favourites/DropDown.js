@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import { RecipeCardFavourite } from "components/recipe/RecipeCardFavourite";
-import SeeAllButton from "components/favourites/SeeAllButton";
+import { RecipeCardFavourite } from "../recipe/RecipeCardFavourite";
+import SeeAllButton from "./SeeAllButton";
 
 export default class RecipeList extends Component {
   static contextTypes = {

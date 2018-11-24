@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { searchRecipes } from "actions/recipe";
+import { searchRecipes } from "../actions/recipe";
 export class SearchBar extends Component {
   static propTypes = {
     redirect: PropTypes.bool,

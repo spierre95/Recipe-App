@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import SearchBar from 'components/SearchBar'
+import SearchBar from '../../components/SearchBar'
 
 class Home extends Component {
   render() {
