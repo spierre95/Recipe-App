@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FavouriteButton from "components/favourites/FavouriteButton"
+import FavouriteButton from "../favourites/FavouriteButton"
 
 export const RecipeCard = ({ recipe }) => {
   return (

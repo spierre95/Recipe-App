@@ -1,5 +1,5 @@
 import { normalize } from 'normalizr';
-import { recipesSchema } from 'schema/recipe';
+import { recipesSchema } from '../schema/recipe';
 
 const initialState = {
   fetching: false,

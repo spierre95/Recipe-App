@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import DropDown from "components/favourites/DropDown";
-import Counter from "components/Counter";
+import DropDown from "./DropDown";
+import Counter from "../Counter";
 
 export class DropDownButton extends Component {
   state = {

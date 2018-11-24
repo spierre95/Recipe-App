@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from 'components/SearchBar';
-import DropDownButton from 'components/favourites/DropDownButton';
+import SearchBar from '../../components/SearchBar';
+import DropDownButton from '../../components/favourites/DropDownButton';
 
 
 const Header = () => {

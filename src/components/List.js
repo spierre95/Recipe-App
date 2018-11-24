@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { RecipeCard } from "components/recipe/RecipeCard";
+import { RecipeCard } from "./recipe/RecipeCard";
 
 export class List extends Component {
   render() {

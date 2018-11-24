@@ -1,4 +1,4 @@
-import { unitsShort, unitsLong } from 'constants/ingredientUnits'
+import { unitsShort, unitsLong } from '../constants/ingredientUnits'
 
 const parseIngredients = ingredients =>
   ingredients.map(el => {

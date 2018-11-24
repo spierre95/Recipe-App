@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import search from 'reducers/search';
-import favourites from 'reducers/favourites';
-import recipes from 'reducers/recipes';
+import search from './search';
+import favourites from './favourites';
+import recipes from './recipes';
 
 const rootRuducer = combineReducers({
     search, favourites, recipes

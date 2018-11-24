@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { getRecipe } from "actions/recipe";
+import { getRecipe } from "../../actions/recipe";
 
 class Recipe extends Component {
   componentDidMount() {

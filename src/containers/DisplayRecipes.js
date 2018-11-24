@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { List } from "components/List";
+import { List } from "../components/List";
 
 class DisplayRecipes extends Component {
   render() {
