@@ -3,11 +3,14 @@ import { recipeSchema } from '../schema/recipe';
 
 const initialState = {
   fetching: false,
-  recipes: {},
+  recipes: {
+    
+  },
   results: []
 };
 
 export default function recipes(state = initialState, action) {
+  
   switch (action.type) {
     case "REQUEST_RECIPES":
       return {
@@ -18,7 +21,7 @@ export default function recipes(state = initialState, action) {
 
     console.log(action.payload,'payload')
     const normalizedData = normalize(action.payload, [recipeSchema])
-    console.log(normalizedData.entities)
+    normalizedData.entities.recipe[action.payload.recipe.recipe_id]['servingSize'] =  1;
 
       return {
         fetching: false,
@@ -27,7 +30,7 @@ export default function recipes(state = initialState, action) {
             ...state.recipes,
             ...normalizedData.entities.recipe
         },
-        results: [...state.results, normalizedData.entities.recipe.recipe_id]
+        results: [...state.results, ...normalizedData.result]
       };
 
     case "ADD_TO_FAVOURITES":
@@ -52,6 +55,32 @@ export default function recipes(state = initialState, action) {
         } 
       }
     } 
+    case "UPDATE_SERVING_SIZE":
+
+    let amount = action.payload.type === 'increase' ? 1 : -1
+
+    const newServingSize = state.recipes[action.payload.id].servingSize + amount
+
+    const updateDatedIngredients = state.recipes[action.payload.id].ingredients.map(el => {
+      const newCount = el.count *= (newServingSize /state.recipes[action.payload.id].servingSize)
+      return {
+        count: el.count !== 0 ? newCount : "",
+        unit: el.unit,
+        ingredient: el.ingredient
+      }
+    })
+
+    return {
+      ...state,
+      recipes : {
+        ...state.recipes,
+        [action.payload.id]:{
+          ...state.recipes[action.payload.id],
+          ingredients: updateDatedIngredients,
+          servingSize: newServingSize
+        } 
+      }
+    }   
     default:
       return state;
   }

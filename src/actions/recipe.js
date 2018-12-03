@@ -71,3 +71,10 @@ export function getRecipe(id) {
     // })
   };
 }
+
+export function updateServingSize(type, id) {
+  return {
+    type: 'UPDATE_SERVING_SIZE',
+    payload: {id, type }
+  }
+}

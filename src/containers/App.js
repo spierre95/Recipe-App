@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "../store";
 import Home from "./pages/Home";
 import Recipe from "./pages/Recipe";
-import Header from "./layout/header";
+import Header from "./layout/Header";
 import DisplayRecipes from "./DisplayRecipes";
 
 class App extends Component {
