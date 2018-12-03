@@ -1,0 +1,12 @@
+.recipe-ingredients {
+  flex: 0 1 calc(33% - 2rem);
+  font-size: 1.6rem;
+  margin: 1rem;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 4rem;
+  }
+}

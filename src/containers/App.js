@@ -28,7 +28,7 @@ class App extends Component {
               path="/favourites"
               component={DisplayRecipes}
             />
-            <Route title="Recipe" path="/recipe/:recipe" component={Recipe} />
+            <Route title="Recipe" path="/recipe/:recipe_id" component={Recipe} />
           </Fragment>
         </Router>
       </Provider>

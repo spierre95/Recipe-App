@@ -34,6 +34,13 @@ a {
     animation-duration: 1s;
     animation-timing-function: ease-out; }
 
+.heading-secondary {
+  display: block;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #203a43; }
+
 .heading-tertiary {
   transition: 0.4s ease-in-out;
   font-size: 1.6rem;
@@ -281,3 +288,13 @@ a {
   height: 1.5rem; }
   .counter-amount {
     color: #fff; }
+
+.recipe-ingredients {
+  flex: 0 1 calc(33% - 2rem);
+  font-size: 1.6rem;
+  margin: 1rem; }
+  .recipe-ingredients__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 4rem; }

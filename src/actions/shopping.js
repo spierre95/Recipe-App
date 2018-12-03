@@ -1,4 +1,4 @@
-import { search, get } from "../constants/apiRequests";
+// import { search, get } from "../constants/apiRequests";
 import { searchData, recipeData } from "../constants/testData";
 import parseIngredients from "../utils/parseIngredients";
 
