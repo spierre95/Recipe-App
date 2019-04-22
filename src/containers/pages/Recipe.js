@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { getRecipe, updateServingSize } from "../../actions/recipe";
+import { addItemsToList } from '../../actions/shopping';
+import  Modal from '../../components/Modal';
 
 class Recipe extends Component {
   componentDidMount() {
     const { match, getRecipe } = this.props;
     const { recipe_id } = match.params;
+    const { recipes } = this.props
+    console.log( recipes, 'in recipe page' ) 
     getRecipe(recipe_id);
   }
 
@@ -17,13 +21,13 @@ class Recipe extends Component {
   };
 
   render() {
-    const { recipes, match } = this.props;
+    const { recipes, match, addItemsToList } = this.props;
     const { recipe_id } = match.params;
     const recipe = recipes && recipes[recipe_id];
     const title = recipe && recipe.title;
-    const ingredients =
-      recipe &&
-      recipe.ingredients.map(el => (
+    const ingredients = recipe && recipe.ingredients
+    const ingredientList =
+      ingredients && ingredients.map(el => (
         <div className="recipe-ingredients">{`${el.count} ${el.unit} ${
           el.ingredient
         }`}</div>
@@ -45,7 +49,8 @@ class Recipe extends Component {
             <span>{servingSize}</span>
             <span onClick={() => this.handleClick("increase", recipe_id, servingSize)}> + </span>
           </div>
-          <div className="recipe-ingredients__container">{ingredients}</div>
+          <div className="recipe-ingredients__container">{ingredientList}</div>
+          <buttton onClick={() => addItemsToList(ingredients)}>add to list </buttton>
         </div>
       </div>
     );
@@ -59,6 +64,6 @@ const mapStateToProps = state => ({
 export default withRouter(
   connect(
     mapStateToProps,
-    { getRecipe, updateServingSize }
+    { getRecipe, updateServingSize, addItemsToList }
   )(Recipe)
 );

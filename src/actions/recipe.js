@@ -40,7 +40,8 @@ export function getRecipe(id) {
 
     const { ingredients } = recipe.recipe;
 
-    console.log(ingredients)
+    console.log(ingredients, 'ingedients')
+    console.log(typeof ingredients, 'ingedients')
 
     recipe.recipe.ingredients = parseIngredients(ingredients);
 

@@ -7,7 +7,7 @@ export const RecipeCard = ({ recipe }) => {
     <div className="recipe-card">
      <Link to={`/recipe/${recipe.recipe_id}`}>
       <div
-        class="recipe-card__img"
+        className="recipe-card__img"
         style={{ backgroundImage: `url(${recipe.image_url})` }}
         alt={recipe.title}
       >

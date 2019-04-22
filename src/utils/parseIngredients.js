@@ -2,6 +2,7 @@ import { unitsShort, unitsLong } from "../constants/ingredientUnits";
 
 const parseIngredients = ingredients =>
   ingredients.map(el => {
+    console.log(el, 'elements');
     let ingredient = el.toLowerCase();
 
     // standardize and shorten units ( ex tablespoons becomes tbsp)
