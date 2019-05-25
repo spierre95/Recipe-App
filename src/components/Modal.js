@@ -11,10 +11,11 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     width: "50%",
     height: "75vh",
-    transition: "all 2s fadeIn"  
+    transition: "all 2s fadeIn",
+    backgroundColor: "#fff" 
   },
   overlay: {
-    backgroundColor: "red"
+    backgroundColor: "rgba(80, 80, 80, 0.8)"
   }
 };
 

@@ -195,8 +195,7 @@ a {
   right: 1rem;
   top: 1rem;
   font-size: 2.5rem;
-  color: red;
-  z-index: 1; }
+  color: #f00; }
 
 .favourite-dropdown-button {
   display: block;
@@ -298,3 +297,18 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 4rem; }
+
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; }
+  .shopping-list .shopping-list__item {
+    font-size: 16px;
+    display: flex;
+    padding: 5px 15px;
+    align-items: center; }
+    .shopping-list .shopping-list__item .shopping-list__item-text {
+      padding: 0 15px; }

@@ -10,7 +10,6 @@ class Recipe extends Component {
     const { match, getRecipe } = this.props;
     const { recipe_id } = match.params;
     const { recipes } = this.props
-    console.log( recipes, 'in recipe page' ) 
     getRecipe(recipe_id);
   }
 

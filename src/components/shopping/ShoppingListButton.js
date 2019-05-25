@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import ShoppingList from "./ShoppingList";
 import Modal from '../Modal';
 import Counter from "../Counter";
 
@@ -29,7 +30,7 @@ export class ShoppingListButton extends Component {
           />
         </div>
         <Modal modalIsOpen={this.state.modalIsOpen}>
-            <h1> It worked! </h1>
+          <ShoppingList/>
         </Modal>
       </Fragment>
     );

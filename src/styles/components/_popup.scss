@@ -1,0 +1,19 @@
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .shopping-list__item {
+    font-size: 16px;
+    display: flex;
+    padding: 5px 15px;
+    align-items: center;
+
+    .shopping-list__item-text {
+      padding: 0 15px;
+    }
+  }
+}

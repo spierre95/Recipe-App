@@ -36,16 +36,9 @@ export function getRecipe(id) {
   return dispatch => {
     const recipe = recipeData;
 
-    console.log(recipe)
-
     const { ingredients } = recipe.recipe;
 
-    console.log(ingredients, 'ingedients')
-    console.log(typeof ingredients, 'ingedients')
-
     recipe.recipe.ingredients = parseIngredients(ingredients);
-
-    console.log(recipe);
 
     dispatch({
       type: "RECEIVE_RECIPE",
@@ -60,7 +53,6 @@ export function getRecipe(id) {
 
     //     recipe['ingredients'] = parseIngredients(ingredients)
 
-    //     console.log(recipe)
 
     //     dispatch({
     //       type: "RECEIVE_RECIPE",
