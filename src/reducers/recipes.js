@@ -64,6 +64,7 @@ export default function recipes(state = initialState, action) {
         const newCount = (el.count *=
           newServingSize / state.recipes[action.payload.id].servingSize);
         return {
+          id: el.id,
           count: el.count !== 0 ? newCount : "",
           unit: el.unit,
           ingredient: el.ingredient
@@ -79,7 +80,7 @@ export default function recipes(state = initialState, action) {
             ingredients: updateDatedIngredients,
             servingSize: newServingSize
           }
-        }
+        },
       };
     default:
       return state;

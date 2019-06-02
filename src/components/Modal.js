@@ -31,9 +31,6 @@ export class Modal extends Component {
     this.setState({ modalIsOpen: this.props.modalIsOpen });
   }
 
-  afterOpenModal = () => {
-  }
-
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   }
@@ -44,7 +41,8 @@ export class Modal extends Component {
         <ReactModal
           isOpen={this.props.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
+          onRequestClose={() => this.closeModal}
+          shouldCloseOnOverlayClick={true}
           style={customStyles}
         >
         {this.props.children}

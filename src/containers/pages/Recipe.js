@@ -9,7 +9,7 @@ class Recipe extends Component {
   componentDidMount() {
     const { match, getRecipe } = this.props;
     const { recipe_id } = match.params;
-    const { recipes } = this.props
+  
     getRecipe(recipe_id);
   }
 
@@ -33,6 +33,7 @@ class Recipe extends Component {
       ));
     const imgUrl = recipe && recipe.image_url;
     const servingSize = recipe && recipe.servingSize;
+    const recipeId = recipe && recipe.recipe_id
     return (
       <div className="search-results">
         <div className="search-results__container">
@@ -49,7 +50,7 @@ class Recipe extends Component {
             <span onClick={() => this.handleClick("increase", recipe_id, servingSize)}> + </span>
           </div>
           <div className="recipe-ingredients__container">{ingredientList}</div>
-          <buttton onClick={() => addItemsToList(ingredients)}>add to list </buttton>
+          <buttton onClick={() => addItemsToList(ingredients,recipeId, title, servingSize )}>add to list </buttton>
         </div>
       </div>
     );

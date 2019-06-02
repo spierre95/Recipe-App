@@ -16,7 +16,8 @@ body {
 body {
   font-family: "Lato", "sans-serif";
   font-weight: 400;
-  line-height: 1.7; }
+  line-height: 1.7;
+  color: #999; }
 
 a {
   text-decoration: none; }
@@ -305,10 +306,14 @@ a {
   align-items: center;
   height: 100%;
   width: 100%; }
-  .shopping-list .shopping-list__item {
+  .shopping-list__item {
     font-size: 16px;
     display: flex;
     padding: 5px 15px;
     align-items: center; }
-    .shopping-list .shopping-list__item .shopping-list__item-text {
-      padding: 0 15px; }
+    .shopping-list__item-text {
+      padding: 0 15px;
+      font-weight: 300;
+      color: #a9a9a9; }
+    .shopping-list__item-container {
+      display: flex; }

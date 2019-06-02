@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import ShoppingList from "./ShoppingList";
-import Modal from '../Modal';
+import Modal from "../Modal";
 import Counter from "../Counter";
 
 export class ShoppingListButton extends Component {
   state = {
-    modalIsOpen: false
+    modalIsOpen: false,
   };
 
   handleClick = () => {
@@ -17,20 +17,25 @@ export class ShoppingListButton extends Component {
     // const btnClass = !this.state.showDropDown && "hidden";
 
     const { shoppingList } = this.props;
-    const amount = shoppingList.ingredients.length
+    let listLength = 0; 
+    for(let el in shoppingList) {
+     listLength += shoppingList[el].ingredients.length
+    }
 
     return (
       <Fragment>
-        <div className={`favourite-dropdown-button__container`}
-        style={{right:"5rem"}}>
-          {amount > 0 && <Counter amount={amount} />}
+        <div
+          className={`favourite-dropdown-button__container`}
+          style={{ right: "5rem" }}
+        >
+          {listLength > 0 && <Counter amount={listLength} />}
           <i
             className={`far fa-list-alt favourite-dropdown-button `}
             onClick={this.handleClick}
           />
         </div>
         <Modal modalIsOpen={this.state.modalIsOpen}>
-          <ShoppingList/>
+          <ShoppingList />
         </Modal>
       </Fragment>
     );
@@ -38,7 +43,7 @@ export class ShoppingListButton extends Component {
 }
 
 const mapStateToProps = state => ({
-  shoppingList: state.shopping
+  shoppingList: state.shopping.list
 });
 
 export default connect(mapStateToProps)(ShoppingListButton);

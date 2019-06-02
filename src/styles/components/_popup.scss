@@ -6,14 +6,20 @@
   height: 100%;
   width: 100%;
 
-  .shopping-list__item {
+  &__item {
     font-size: 16px;
     display: flex;
     padding: 5px 15px;
     align-items: center;
 
-    .shopping-list__item-text {
+    &-text {
       padding: 0 15px;
+      font-weight: 300;
+      color: #a9a9a9;
+    }
+
+    &-container {
+      display: flex;
     }
   }
 }
