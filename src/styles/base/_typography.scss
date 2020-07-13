@@ -2,7 +2,7 @@ body {
   font-family: "Lato", "sans-serif";
   font-weight: 400;
   line-height: 1.7;
-  color: #999;
+  color: #444;
 }
 
 a {
@@ -46,4 +46,34 @@ a {
   &:hover {
     color: #1eadd8;
   }
+}
+
+// icons
+
+.fas {
+  cursor: pointer;
+}
+
+.fa-plus {
+  color: #203a43;
+  font-size: 14px;
+}
+.fa-plus:hover {
+  color: #2c5364;
+}
+
+.fa-minus {
+  color: #f00;
+  font-size: 14px;
+}
+.fa-minus:hover {
+  color: #db3e3e;
+}
+
+.fa-times {
+  color: #666;
+  font-size: 14px;
+}
+.fa-times:hover {
+  color: #000;
 }

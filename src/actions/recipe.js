@@ -10,27 +10,27 @@ export function searchRecipes(input) {
       type: "RECEIVE_RECIPES",
       payload: recipes
     });
-    // dispatch(requestRecipes());
-    // return search(input)
-    //   .then(res => {
-    //     const recipes = res.data;
+    dispatch(requestRecipes());
+    return search(input)
+      .then(res => {
+        const recipes = res.data;
 
-    //     dispatch({
-    //       type: "RECEIVE_RECIPES",
-    //       payload: recipes
-    //     });
-    //   })
-    //   .catch(error => {
-    //     throw error;
-    //   });
+        dispatch({
+          type: "RECEIVE_RECIPES",
+          payload: recipes
+        });
+      })
+      .catch(error => {
+        throw error;
+      });
   };
 }
 
-// function requestRecipes() {
-//   return {
-//     type: "REQUEST_RECIPES"
-//   };
-// }
+function requestRecipes() {
+  return {
+    type: "REQUEST_RECIPES"
+  };
+}
 
 export function getRecipe(id) {
   return dispatch => {
@@ -45,23 +45,23 @@ export function getRecipe(id) {
       payload: recipe
     });
 
-    // return get(id)
-    // .then((res)=>{
-    //     const { recipe } = res.data
+    return get(id)
+    .then((res)=>{
+        const { recipe } = res.data
 
-    //     const { ingredients } = recipe
+        const { ingredients } = recipe
 
-    //     recipe['ingredients'] = parseIngredients(ingredients)
+        recipe['ingredients'] = parseIngredients(ingredients)
 
 
-    //     dispatch({
-    //       type: "RECEIVE_RECIPE",
-    //       payload: recipe
-    //     });
-    // })
-    // .catch(err =>{
-    //   throw err;
-    // })
+        dispatch({
+          type: "RECEIVE_RECIPE",
+          payload: recipe
+        });
+    })
+    .catch(err =>{
+      throw err;
+    })
   };
 }
 

@@ -29,7 +29,6 @@ class ShoppingListItem extends Component {
 
     return (
       <div className="shopping-list__item">
-        <i className="fas fa-check"></i>
         <div className="shopping-list__item-container">
           <div class="shopping-list__item-text">
             {item.count} {item.unit} {item.ingredient}
@@ -37,12 +36,12 @@ class ShoppingListItem extends Component {
           {
           item.count &&
           <div class="shopping-list__item-update">
-            <span onClick={this.handleDecrease}> - </span>
-            <span onClick={this.handleIncrease}> + </span>
+            <span onClick={this.handleIncrease}><i class="fas fa-plus"></i></span>
+            <span onClick={this.handleDecrease}><i class="fas fa-minus"></i></span>
           </div>
           }
         </div>
-        <span onClick={this.handleRemoveItem}>X</span>
+        <div className="shopping-list__item-remove" onClick={this.handleRemoveItem}><i class="fas fa-times"></i></div>
       </div>
     )
   }
