@@ -1,3 +1,4 @@
+import cuid from "cuid";
 import { unitsShort, unitsLong } from "../constants/ingredientUnits";
 
 const parseIngredients = ingredients =>
@@ -34,6 +35,7 @@ const parseIngredients = ingredients =>
       }
 
       objIng = {
+        id: cuid(),
         count,
         unit: arrIng[unitIndex],
         ingredient: arrIng.slice(unitIndex + 1).join(" ")
@@ -42,6 +44,7 @@ const parseIngredients = ingredients =>
       // there are no units, but there is  a number at the begining of the string
     } else if (parseInt(arrIng[0], 10)) {
       objIng = {
+        id: cuid(),
         count: parseInt(arrIng[0], 10),
         unit: "",
         ingredient: arrIng.slice(1).join(" ")
@@ -50,6 +53,7 @@ const parseIngredients = ingredients =>
       // no units
     } else if (unitIndex === -1) {
       objIng = {
+        id: cuid(),
         count: "",
         unit: "",
         ingredient

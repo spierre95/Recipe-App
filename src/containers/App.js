@@ -28,6 +28,12 @@ class App extends Component {
               path="/favourites"
               component={DisplayRecipes}
             />
+            <Route
+              title="Countries"
+              exact
+              path="/countries/:country"
+              component={DisplayRecipes}
+            />
             <Route title="Recipe" path="/recipe/:recipe_id" component={Recipe} />
           </Fragment>
         </Router>

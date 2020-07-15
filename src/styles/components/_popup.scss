@@ -1,0 +1,39 @@
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  &__container {
+    background-color: #f9f9f9;
+    padding: 15px;
+    box-shadow: 1px 3px 5px #e3e3e3;
+  }
+
+  &__item {
+    font-size: 16px;
+    display: flex;
+    padding: 5px 15px;
+    align-items: center;
+
+    &-text {
+      padding: 0 15px;
+    }
+
+    &-remove {
+      margin-left: auto;
+    }
+
+    &-update {
+      .fas {
+        padding: 0 10px;
+      }
+    }
+
+    &-container {
+      display: flex;
+    }
+  }
+}

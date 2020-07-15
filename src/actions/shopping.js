@@ -1,80 +1,33 @@
-// import { search, get } from "../constants/apiRequests";
-import { searchData, recipeData } from "../constants/testData";
-import parseIngredients from "../utils/parseIngredients";
-
-export function searchRecipes(input) {
-  return dispatch => {
-    const recipes = searchData;
-
-    dispatch({
-      type: "RECEIVE_RECIPES",
-      payload: recipes
-    });
-    // dispatch(requestRecipes());
-    // return search(input)
-    //   .then(res => {
-    //     const recipes = res.data;
-
-    //     dispatch({
-    //       type: "RECEIVE_RECIPES",
-    //       payload: recipes
-    //     });
-    //   })
-    //   .catch(error => {
-    //     throw error;
-    //   });
-  };
-}
-
-// function requestRecipes() {
-//   return {
-//     type: "REQUEST_RECIPES"
-//   };
-// }
-
-export function getRecipe(id) {
-  return dispatch => {
-    const recipe = recipeData;
-
-    console.log(recipe)
-
-    const { ingredients } = recipe.recipe;
-
-    console.log(ingredients)
-
-    recipe.recipe.ingredients = parseIngredients(ingredients);
-
-    console.log(recipe);
-
-    dispatch({
-      type: "RECEIVE_RECIPE",
-      payload: recipe
-    });
-
-    // return get(id)
-    // .then((res)=>{
-    //     const { recipe } = res.data
-
-    //     const { ingredients } = recipe
-
-    //     recipe['ingredients'] = parseIngredients(ingredients)
-
-    //     console.log(recipe)
-
-    //     dispatch({
-    //       type: "RECEIVE_RECIPE",
-    //       payload: recipe
-    //     });
-    // })
-    // .catch(err =>{
-    //   throw err;
-    // })
-  };
-}
-
-export function updateServingSize(type, id) {
+export function addItemsToList(ingredients, recipe_id, title, servingSize) {
   return {
-    type: 'UPDATE_SERVING_SIZE',
-    payload: {id, type }
+    type: 'ADD_ITEMS_TO_LIST',
+    payload: {ingredients, recipe_id, title, servingSize }
+  }
+}
+
+export function removeRecipeFromList(recipe_id) {
+  return {
+    type: 'REMOVE_RECIPE_FROM_LIST',
+    payload: recipe_id
+  }
+} 
+
+export function removeItemFromList({recipe_id, item_id}) {
+  return {
+    type: 'REMOVE_ITEM_FROM_LIST',
+    payload: {recipe_id, item_id}
+  }
+}
+
+export function increaseIngredientCount({recipe_id, item_id}) {
+  return {
+    type: 'INCREASE_INGRIDIENT_COUNT',
+    payload: {recipe_id, item_id}
+  }
+}
+export function decreaseIngridientCount({recipe_id, item_id}){
+  return {
+    type: 'DECREASE_INGRIDIENT_COUNT',
+    payload: {recipe_id, item_id}
   }
 }

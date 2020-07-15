@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "cuid": "^2.1.6",
     "node-sass": "^4.9.4",
     "normalizr": "^3.3.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.6.0",
+    "react-modal": "^3.8.1",
     "react-redux": "^5.1.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -21,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile-css": "node-sass src/styles/app.scss public/style.css -w"
+    "compile-sass": "node-sass src/styles/app.scss public/style.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
